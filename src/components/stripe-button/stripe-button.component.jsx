@@ -6,10 +6,13 @@ const StripeCheckoutButton = ({ price, currentUser }) => {
   const publishableKey =
     "pk_test_51JTTi2SIVdTvGFwiznQOMDAcVCrFwEINinC1fAjON0EgvXTVV9fpJjQnrI5QQjQMN7vNyRAJWKfgfJd7ZgMf2nxY00t7znwpD1";
 
+  // rupee symbol shortcut on keyboard⌨ ➡ Ctrl  + alt + 4/$
   const onToken = (token) => {
     console.log(token);
     alert("Payment Succesful!");
   };
+  let currency ="&#8377";
+  console.log(currency);
   return (
     <StripeCheckout
       label="Pay Now"
@@ -17,7 +20,7 @@ const StripeCheckoutButton = ({ price, currentUser }) => {
       billingAddress
       shippingAddress
       image="https://svgshare.com/i/CUz.svg"
-      description={`Your total is $${price}`}
+      description={`Your total is ₹${price}`}
       amount={priceForStripe}
       panelLabel="Pay Now"
       token={onToken}
